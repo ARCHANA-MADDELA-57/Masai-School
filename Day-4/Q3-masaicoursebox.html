@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Course Box Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f7;
+            padding: 40px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto; 
+        }
+
+        .course-card {
+            width: 100%;
+            padding: 25px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card.highlight {
+            background-color: #d72138;
+            color: white;
+            border-color: #d72138;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card > .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; 
+        }
+
+        .course-card .header .logo {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .highlight .header .logo {
+            border: 1px solid white;
+        }
+        .highlight .institute,
+        .highlight .title,
+        .highlight .details p,
+        .highlight .qualifier-date {
+            color: white !important; 
+        }
+
+
+        .course-card .title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        .course-card > .details {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .course-card .qualifier-date {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+        .course-card .qualifier-date strong {
+            font-weight: 700;
+        }
+
+        .qualifier-date + .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto; 
+        }
+
+        .course-card a.btn {
+            display: block;
+            padding: 10px 15px; 
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+            border: 1px solid transparent; 
+            flex-grow: 1; 
+            text-align: center;
+        }
+
+        .course-card .btn.primary {
+            background-color: #d72138;
+            color: white;
+        }
+
+        .course-card .btn.secondary {
+            background-color: white;
+            color: #d72138;
+            border-color: #d72138;
+        }
+
+        .highlight .btn.primary {
+            background-color: white;
+            color: #d72138;
+        }
+        .highlight .btn.secondary {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        
+        .course-card .btn.primary:hover {
+            background-color: #b51a2d; 
+        }
+        .course-card .btn.secondary:hover {
+            background-color: #fcebeb; 
+        }
+        .highlight .btn.primary:hover {
+            background-color: #f0f0f0;
+        }
+        .highlight .btn.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="course-grid">
+        
+        <div class="course-card">
+            <div class="header">
+                <img src="iim_sirmaur_logo.png" alt="IIM Logo" class="logo"> 
+                <p class="institute">IIM Sirmaur</p>
+            </div>
+            <h3 class="title">EDGE: Essentials of Data Analytics, Gen AI & Execution</h3>
+            <div class="details">
+                <p>06 months</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>12th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+        
+        <div class="course-card">
+            <div class="header">
+                <img src="iit_patna_logo.png" alt="IIT Logo" class="logo">
+                <p class="institute">Vislesan I-Hub IIT Patna</p>
+            </div>
+            <h3 class="title">Product Management and Agentic AI</h3>
+            <div class="details">
+                <p>06 months</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>12th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+
+        <div class="course-card highlight">
+            <div class="header">
+                <img src="iit_patna_logo.png" alt="IIT Logo" class="logo">
+                <p class="institute">Vislesan I-Hub IIT Patna</p>
+            </div>
+            <h3 class="title">Certification Program in Data Analytics with Gen & Agentic AI</h3>
+            <div class="details">
+                <p>06 months</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>9th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+        
+        <div class="course-card">
+            <div class="header">
+                <img src="iim_trichy_logo.png" alt="IIM Logo" class="logo">
+                <p class="institute">IIM Trichy</p>
+            </div>
+            <h3 class="title">Product Management in the Agentic AI Era</h3>
+            <div class="details">
+                <p>06 months</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>12th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="header">
+                <img src="iit_roorkee_logo.png" alt="IIT Roorkee Logo" class="logo">
+                <p class="institute">IHUB DivyaSampark, IIT Roorkee</p>
+            </div>
+            <h3 class="title">Future-Ready Product Management with Applied AI Program</h3>
+            <div class="details">
+                <p>6 months</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>12th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="header">
+                <img src="nmims_cdoe_logo.png" alt="NMIMS Logo" class="logo">
+                <p class="institute">NMIMS CDOE</p>
+            </div>
+            <h3 class="title">Online MBA</h3>
+            <div class="details">
+                <p>02 Years</p>
+                <p>Online</p>
+            </div>
+            <p class="qualifier-date">Qualifier test - <strong>12th Nov 2025</strong></p>
+            <div class="actions">
+                <a href="#" class="btn primary">Learn more →</a>
+                <a href="#" class="btn secondary">Brochure →</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

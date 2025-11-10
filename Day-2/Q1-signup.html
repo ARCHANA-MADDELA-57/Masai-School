@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup Page</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 4px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            color: #007bff;
+        }
+        .gender-group {
+            display: flex;
+            gap: 20px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Service</h1>
+    </header>
+    
+    <main>
+        <img class="welcome-image" 
+             src="data:image/jpeg;base64,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" 
+             alt="Welcome Image: A note with the word 'Welcome'" 
+             style="max-width: 100%;">
+             
+        <p>Join our community today to access exclusive content and services. Please fill out the form below to create your account.</p>
+
+        <form action="/submit-signup" method="POST">
+            
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="e.g., archana@example.com" required>
+            </div>
+
+            <fieldset>
+                <legend>Gender</legend>
+                <div class="gender-group">
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Must be 18 or older" min="18" required>
+            </div>
+
+            <div>
+                <input type="submit" value="Signup">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Maddela Archana. All rights reserved.</p>
+        
+        <p><a href="https://www.google.com" target="_blank">Click here</a></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector Challenge: Box Model Layout</title>
+
+    <style>
+        * {
+            font-family: Georgia, serif; 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .layout-container {
+            width: 800px; 
+            border: 1px solid #ddd; 
+        }
+        
+        .sub-header {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        .section-one {
+            background-color: #e9e5d7; 
+            padding: 30px 40px; 
+            margin-bottom: 5px;
+        }
+
+        .section-one h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            font-weight: normal;
+            color: #4a5448; 
+        }
+
+        .section-two {
+            background-color: #4a5448; 
+            padding: 30px 40px; 
+            margin-bottom: 5px; 
+        }
+
+        .section-two h2 {
+            font-size: 48px;
+            line-height: 1.1;
+            font-weight: bold;
+            color: white; 
+        }
+        
+        .section-three {
+            background-color: #e9e5d7;
+            padding: 30px 40px; 
+        }
+
+        .section-three h3 {
+            font-size: 52px;
+            line-height: 1.1;
+            font-weight: normal;
+            color: #6a8c6a; 
+        }
+
+        .section-one::before {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .section-one h1, .section-two h2, .section-three h3 {
+            border-left: 5px solid transparent; 
+            padding-left: 5px; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="layout-container">
+        
+        <div class="section-one">
+            <p class="sub-header">Everyone Needs Infinite Dreams</p>
+            <h1>Enid is an amplification studio that builds brands that resound.</h1>
+        </div>
+
+        <div class="section-two">
+            <p class="sub-header" style="color: #9bcc9b;">Each New Idea Defined</p>
+            <h2>We stand firm on our values that sit central to everything we do.</h2>
+        </div>
+
+        <div class="section-three">
+            <p class="sub-header">Every Note Is Distinct</p>
+            <h3>We deep-dive into your back catalogue to understand the beat.</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

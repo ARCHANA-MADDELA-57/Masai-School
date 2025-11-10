@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Styled Webpage</title>
+    
+    <style>
+        body {
+            font-family: Arial, "Times New Roman", sans-serif;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); 
+            margin: 0;
+            padding: 0;
+            text-align: center; 
+        }
+        
+        header {
+            border: 3px solid black;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        td, th {
+            border: 2px solid #6c757d; 
+            padding: 12px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f8f8f8; 
+        }
+        tbody tr:nth-child(even) {
+            background-color: #e9ecef; 
+        }
+        
+        .learn-more-button {
+            background-color: #007bff; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .learn-more-button:hover {
+            background-color: #0056b3; 
+        }
+        
+        .service-paragraph {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 15px;
+            text-align: justify; 
+            color: #495057;
+            border: 2px solid #495057;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            padding: 10px;
+            text-align: center; 
+            font-size: 0.85em; 
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="background-color: lightgrey; color: darkblue; font-size: 40px;">
+            Welcome to My Webpage
+        </h1>
+        
+        <h2 style="font-weight: bold; color: green; font-size: 28px;">
+            Learning Web Development
+        </h2>
+        
+        <nav>
+            <a href="#home" style="text-decoration: none; padding: 0 15px; color: #333;">Home</a> 
+            <a href="#about" style="text-decoration: none; padding: 0 15px; color: #333;">About</a> 
+            <a href="#contact" style="text-decoration: none; padding: 0 15px; color: #333;">Contact</a>
+            
+            <style>
+                nav a:hover {
+                    text-decoration: underline; 
+                }
+            </style>
+        </nav>
+    </header>
+
+    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+         alt="Code on a laptop screen"
+         style="width: 400px; /* Set the image width to 400px */
+                border-radius: 50%; /* Apply border-radius: 50% to make it circular */
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add a box-shadow */
+                object-fit: cover; /* Ensures image fills the circular area */
+                height: 400px; /* Ensures a square starting point for perfect circle */">
+
+    <h2>Our Services</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="background-color: #007bff; color: white;">Service</th>
+                <th style="background-color: #007bff; color: white;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Web Design</td>
+                <td>Modern, responsive layouts for all devices.</td>
+            </tr>
+            <tr>
+                <td>Development</td>
+                <td>Frontend and backend solutions using HTML, CSS, and Python.</td>
+            </tr>
+            <tr>
+                <td>Consulting</td>
+                <td>Expert advice on SDLC and project planning.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button class="learn-more-button">Learn More</button>
+
+    <p class="service-paragraph">
+        We specialize in creating robust and scalable web solutions, leveraging the latest technologies in development and design. Our goal is to translate your vision into a functional and visually appealing digital experience. We follow a disciplined Software Development Lifecycle (SDLC) to ensure quality and timely project delivery. From conceptualization to deployment, we prioritize clarity, performance, and user satisfaction, offering comprehensive support every step of the way.
+    </p>
+
+    <h2>Get in Touch</h2>
+    <form style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: left;">
+        <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box;" required><br>
+
+        <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box;" required><br>
+
+        <input type="submit" value="Submit" style="background-color: #28aa45; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+    </form>
+    
+    <footer>
+        <p>&copy; 2025 Maddela Archana. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
