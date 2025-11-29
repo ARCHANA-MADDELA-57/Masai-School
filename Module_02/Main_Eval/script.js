@@ -33,3 +33,9 @@ const handleLogin = (event)=>{
         alert("Wrong email or password")
     }
 }
+document.addEventListener('DOMContentLoaded',()=>{
+    const loginform=document.getElementById('loginform')
+    if(loginform){
+        loginform.addEventListener('submit',handleLogin)
+    }
+})
