@@ -1,0 +1,1 @@
+export const url="https://mini-fullstack-app-359ba-default-rtdb.asia-southeast1.firebasedatabase.app/"
