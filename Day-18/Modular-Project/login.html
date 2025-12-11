@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main style="padding: 50px 20px;">
+        <h1>Login Page</h1>
+        <form id="login-form">
+            <label for="login-email">Email:</label><br>
+            <input type="email" id="login-email" required><br><br>
+            
+            <label for="login-password">Password:</label><br>
+            <input type="password" id="login-password" required><br><br>
+            
+            <button type="submit">Login</button>
+            <p id="login-message" style="margin-top: 15px;"></p>
+        </form>
+    </main>
+
+    <script type="module">
+        import { handleLogin } from './js/auth.js';
+        import { createNavbar } from './js/modules/navbar.js';
+        import { createFooter } from './js/modules/footer.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inject Navbar and Footer
+            document.body.prepend(createNavbar());
+            document.body.appendChild(createFooter());
+            
+            // Attach login logic to form submission
+            const loginForm = document.getElementById('login-form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+            }
+        });
+    </script>
+</body>
+</html>

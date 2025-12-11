@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <main style="padding: 50px 20px;">
+        <h1>Signup Page</h1>
+        <form id="signup-form">
+            <label for="signup-email">Email:</label><br>
+            <input type="email" id="signup-email" required><br><br>
+            
+            <label for="signup-password">Password:</label><br>
+            <input type="password" id="signup-password" required><br><br>
+            
+            <button type="submit">Signup</button>
+            <p id="signup-message" style="margin-top: 15px;"></p>
+        </form>
+    </main>
+    
+    <script type="module">
+        import { handleSignup } from './js/auth.js';
+        import { createNavbar } from './js/modules/navbar.js';
+        import { createFooter } from './js/modules/footer.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inject Navbar and Footer
+            document.body.prepend(createNavbar());
+            document.body.appendChild(createFooter());
+
+            // Attach signup logic to form submission
+            const signupForm = document.getElementById('signup-form');
+            if (signupForm) {
+                signupForm.addEventListener('submit', handleSignup);
+            }
+        });
+    </script>
+</body>
+</html>
