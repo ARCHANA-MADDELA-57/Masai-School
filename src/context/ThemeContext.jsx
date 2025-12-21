@@ -11,7 +11,7 @@ const toggleTheme = ()=>{
 
 return(
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-        <div className={'app-container ${theme}'}>
+        <div className={`app-container ${theme}`}>
             {children}
         </div>
     </ThemeContext.Provider>
