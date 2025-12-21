@@ -17,7 +17,7 @@ export const PostsProvider = ({children})=>{
 
       //Delete Post
       const deletePost =(id)=>{
-        setPosts(posts.filter(post=>post.id!==id));
+        setPosts((prevPosts)=>prevPosts.filter(post=>post.id!==id));
       };
 
       return(

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePosts } from "../context/PostsContext";
 
 const PostCard=({post})=>{
-    const {updatePost, deletPost}=usePosts();
+    const {updatePost, deletePost}=usePosts();
     const [isEditing, setIsEditing]=useState(false);
     const [editData, setEditData]=useState({title:post.title, body:post.body});
 
@@ -25,7 +25,7 @@ const PostCard=({post})=>{
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>
                 <button onClick={()=>setIsEditing(true)}>Edit</button>
-                <button onClick={()=>deletPost(post.id)}>Delete</button>
+                <button onClick={()=>deletePost(post.id)}>Delete</button>
                 </>
             )}
         </div>
