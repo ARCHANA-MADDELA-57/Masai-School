@@ -4,7 +4,7 @@ const FleetCard = React.memo(({vehicle, onUpdateDriver, onChangeStatus, onDelete
     console.log(`Rendering Card: ${vehicle.regNo}`);
     return(
         <div style={{border:'1px solid #ccc',padding:'10px',margin:'10px',borderRadius:'8px'}}>
-            <img src="https://via.placeholder.com/150" alt="vehicle" style={{width:'100%'}}/>
+            <img src="https://www.kia.com/content/dam/kwcms/gt/en/images/discover-kia/voice-search/parts-80-1.jpg" alt="vehicle" style={{width:'100%'}}/>
             <h3>{vehicle.category}</h3>
             <p>Category:{vehicle.category}</p>
             <p>Driver: {vehicle.driverName}</p>
