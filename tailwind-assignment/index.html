@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Basics Exploration</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6 space-y-16">
+    <section>
+        <h2 class="text-xl md:text-3xl lg:text-5xl
+                 font-bold
+                 bg-gradient-to-r from-blue-500 to-purple-500
+                 text-transparent bg-clip-text">
+            Responsive Gradient Heading
+        </h2>
+    </section>
+    <nav class="bg-white shadow p-4 flex flex-col md:flex-row md:justify-between md:items-center">
+        <h1 class="font-bold text-xl">MySite</h1>
+
+        <div class="flex flex-col md:flex-row gap-4 mt-2 md:mt-0">
+            <a class="hover:text-blue-600" href="#">Home</a>
+            <a class="hover:text-blue-600" href="#">About</a>
+            <a class="hover:text-blue-600" href="#">Contact</a>
+        </div>
+    </nav>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">List Styling</h2>
+
+        <ul class="list-disc list-inside pl-5 space-y-2">
+            <li class="hover:text-blue-600 cursor-pointer">HTML</li>
+            <li class="hover:text-blue-600 cursor-pointer">CSS</li>
+            <li class="hover:text-blue-600 cursor-pointer">Tailwind CSS</li>
+        </ul>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Image Hover Effect</h2>
+
+        <div class="w-64 overflow-hidden rounded-xl shadow-lg">
+            <img src="https://source.unsplash.com/400x300/?nature"
+                class="transform hover:scale-105 transition duration-300" alt="Nature Image" />
+        </div>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Card Component</h2>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 w-72">
+            <img src="https://source.unsplash.com/300x200/?tech" class="rounded-lg mb-4" />
+
+            <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+            <p class="text-gray-600 mb-4">
+                This is a simple card component using Tailwind CSS.
+            </p>
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Learn More
+            </button>
+        </div>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Table Styling</h2>
+
+        <table class="w-full border border-gray-300">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border p-2">Name</th>
+                    <th class="border p-2">Role</th>
+                    <th class="border p-2">Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-2">Archana</td>
+                    <td class="border p-2">Developer</td>
+                    <td class="border p-2">Active</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                    <td class="border p-2">Rahul</td>
+                    <td class="border p-2">Tester</td>
+                    <td class="border p-2">Inactive</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-2">Sneha</td>
+                    <td class="border p-2">Designer</td>
+                    <td class="border p-2">Active</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Input Form</h2>
+
+        <form class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md space-y-4">
+            <input type="text" placeholder="Name"
+                class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <input type="email" placeholder="Email"
+                class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <input type="password" placeholder="Password"
+                class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                Submit
+            </button>
+        </form>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Responsive Grid</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded shadow">Card 1</div>
+            <div class="bg-white p-4 rounded shadow">Card 2</div>
+            <div class="bg-white p-4 rounded shadow">Card 3</div>
+            <div class="bg-white p-4 rounded shadow">Card 4</div>
+            <div class="bg-white p-4 rounded shadow">Card 5</div>
+            <div class="bg-white p-4 rounded shadow">Card 6</div>
+        </div>
+    </section>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Button Styling</h2>
+
+        <button class="bg-gray-200 px-6 py-2 rounded-lg
+                 hover:bg-gray-300
+                 active:bg-gray-400
+                 transition duration-200">
+            Click Me
+        </button>
+    </section>
+
+
+</body>
+
+</html>
