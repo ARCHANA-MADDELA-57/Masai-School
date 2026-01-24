@@ -1,0 +1,63 @@
+--- 1. CREATE TABLE (Step 1) ---
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--- 2. INSERT SAMPLE DATA ---
+INSERT INTO students (name, email, age, course) VALUES
+('Alice Johnson', 'alice@example.com', 22, 'Computer Science'),
+('Bob Smith', 'bob@example.com', 19, 'Mathematics'),
+('Charlie Davis', 'charlie@example.com', 25, 'Computer Science'),
+('Diana Prince', 'diana@example.com', 21, 'Physics'),
+('Ethan Hunt', 'ethan@example.com', 23, 'Mathematics'),
+('Fiona Gallagher', 'fiona@example.com', 18, 'Computer Science'),
+('George Miller', 'george@example.com', 20, 'Physics');
+
+--- 3. AGGREGATE QUERIES (Step 2) ---
+-- Total number of students
+SELECT COUNT(*) AS total_students FROM students;
+
+-- Average age
+SELECT AVG(age) AS average_age FROM students;
+
+-- Min and Max age
+SELECT MIN(age) AS min_age, MAX(age) AS max_age FROM students;
+
+-- Count per course
+SELECT course, COUNT(*) AS student_count FROM students GROUP BY course;
+
+-- Count students older than 20
+SELECT COUNT(*) FROM students WHERE age > 20;
+
+--- 4. GROUPING & FILTERING (Step 3) ---
+-- Course-wise student count
+SELECT course, COUNT(*) AS student_count FROM students GROUP BY course;
+
+-- Courses with more than 1 student
+SELECT course, COUNT(*) AS student_count 
+FROM students 
+GROUP BY course 
+HAVING COUNT(*) > 1;
+
+-- Sorted by highest student count
+SELECT course, COUNT(*) AS student_count 
+FROM students 
+GROUP BY course 
+ORDER BY student_count DESC;
+
+--- 5. ORDERING & LIMITING (Step 4) ---
+-- Latest 3 students
+SELECT * FROM students ORDER BY created_at DESC LIMIT 3;
+
+-- Top 5 oldest students
+SELECT * FROM students ORDER BY age DESC LIMIT 5;
+
+-- Specific course sorted by age (e.g., Physics)
+SELECT * FROM students 
+WHERE course = 'Physics' 
+ORDER BY age DESC;
