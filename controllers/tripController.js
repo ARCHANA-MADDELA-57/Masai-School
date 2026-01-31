@@ -29,7 +29,7 @@ exports.deleteTrip = async (req, res) => {
 
 exports.endTrip = async (req, res) => {
     const { tripId } = req.params;
-    const { data: trip } = await supabase.from('trips').select('*, vehicles(rate_per_km)').eq('id', tripId).single();
+    const { data: trip } = await supabase.from('trips').select(`*, vehicles(rate_per_km)`).eq('id', tripId).single();
     const cost = trip.distance_km * trip.vehicles.rate_per_km;
     await supabase.from('trips').update({ isCompleted: true, tripCost: cost }).eq('id', tripId);
     await supabase.from('vehicles').update({ isAvailable: true }).eq('id', trip.vehicle_id);
