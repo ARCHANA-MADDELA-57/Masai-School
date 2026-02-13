@@ -1,0 +1,118 @@
+---------------------------------------------------------
+-- STEP 1: Create Tables with Relationships
+---------------------------------------------------------
+
+-- Create users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create orders table with Foreign Key referencing users(id)
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    amount INTEGER NOT NULL,
+    status TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+---------------------------------------------------------
+-- STEP 2: Insert Data
+---------------------------------------------------------
+
+-- Insert 5 users
+INSERT INTO users (name, email) VALUES
+('Alice Smith', 'alice@example.com'),
+('Bob Jones', 'bob@example.com'),
+('Charlie Brown', 'charlie@example.com'),
+('David Wilson', 'david@example.com'),
+('Eve Adams', 'eve@example.com');
+
+-- Insert 10 orders (ensuring some users have multiple orders)
+INSERT INTO orders (user_id, amount, status) VALUES
+(1, 150, 'completed'), 
+(1, 50, 'pending'),  
+(2, 300, 'completed'), 
+(2, 120, 'shipped'),  
+(3, 80, 'pending'),
+(4, 210, 'completed'),
+(5, 95, 'shipped'),
+(1, 45, 'completed'), 
+(2, 30, 'cancelled'), 
+(3, 500, 'pending');
+
+
+---------------------------------------------------------
+-- STEP 3: Read Data (Relational Reads)
+---------------------------------------------------------
+
+-- 1. Fetch all users
+SELECT * FROM users;
+
+-- 2. Fetch all orders
+SELECT * FROM orders;
+
+-- 3. Fetch all orders for a specific user (User ID: 1)
+SELECT * FROM orders WHERE user_id = 1;
+
+-- 4. Fetch users who have more than one order
+SELECT users.name, COUNT(orders.id) as order_count
+FROM users
+JOIN orders ON users.id = orders.user_id
+GROUP BY users.id, users.name
+HAVING COUNT(orders.id) > 1;
+
+-- 5. Fetch total order amount per user
+SELECT users.name, SUM(orders.amount) AS total_order_amount
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+GROUP BY users.id, users.name;
+
+
+---------------------------------------------------------
+-- STEP 4: Update Data
+---------------------------------------------------------
+
+-- 1. Update the email of one user
+UPDATE users SET email = 'alice_updated@example.com' WHERE id = 1;
+
+-- 2. Update the status of all orders for a specific user (User ID: 3)
+UPDATE orders SET status = 'completed' WHERE user_id = 3;
+
+-- 3. Update order amount for a single order (Order ID: 5)
+UPDATE orders SET amount = 100 WHERE id = 5;
+
+
+---------------------------------------------------------
+-- STEP 5: Delete Data
+---------------------------------------------------------
+
+-- 1. Delete one order using order id
+DELETE FROM orders WHERE id = 10;
+
+-- 2. Delete all orders of a specific user (User ID: 5)
+DELETE FROM orders WHERE user_id = 5;
+
+-- 3. Attempt deleting a user with existing orders (Observe behavior)
+-- Note: This will result in an error because of the foreign key constraint.
+-- Error: update or delete on table "users" violates foreign key constraint on table "orders"
+DELETE FROM users WHERE id = 2;
+
+
+---------------------------------------------------------
+-- STEP 6: Conceptual Question (Short Answer)
+---------------------------------------------------------
+
+/*
+  Question: Why should orders not be stored inside the users table?
+  
+  Answer: Storing orders in the users table leads to data redundancy and violates 
+  normalization principles. If a user has 10 orders, you would have to repeat their 
+  name and email 10 times, increasing the risk of data inconsistency. Using a separate 
+  orders table with a foreign key allows for a flexible one-to-many relationship, 
+  making the database easier to scale, query, and maintain.
+*/
