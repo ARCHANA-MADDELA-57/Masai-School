@@ -1,0 +1,35 @@
+#Step 1: Create the Table
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+#Step 2: Insert Data (6 Records)
+INSERT INTO students (name, email, age, course) VALUES
+('Alice Johnson', 'alice@example.com', 21, 'Computer Science'),
+('Bob Smith', 'bob@example.com', 19, 'Mathematics'),
+('Charlie Brown', 'charlie@example.com', 22, 'Physics'),
+('Diana Prince', 'diana@example.com', 20, 'Computer Science'),
+('Ethan Hunt', 'ethan@example.com', 23, 'Engineering'),
+('Fiona Gallagher', 'fiona@example.com', 18, 'Mathematics');
+
+
+#Step 3: Read Data
+Fetch all students: SELECT * FROM students;
+Fetch students older than 20: SELECT * FROM students WHERE age > 20;
+Fetch only name and email columns: SELECT name, email FROM students;
+Fetch students enrolled in a specific course: SELECT * FROM students WHERE course = 'Computer Science';
+
+#Step 4: Update Data
+Update the age of one student: UPDATE students SET age = 22 WHERE id = 1;
+Update the course for all students in 'Mathematics' to 'Applied Math': UPDATE students SET course = 'Applied Math' WHERE course = 'Mathematics';
+
+#Step 5: Delete Data
+Delete one student using ID: DELETE FROM students WHERE id = 5;
+Delete all students below a certain age: DELETE FROM students WHERE age < 20;
+
