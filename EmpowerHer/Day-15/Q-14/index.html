@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enhanced Todo List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        li {
+            list-style: none;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .task-actions {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body onload="renderTasks()">
+    <h1>Enhanced Todo List</h1>
+    
+    <input type="text" id="new-task-input" placeholder="Enter a new task">
+    <button id="add-task-btn">Add Task</button>
+    <hr>
+
+    <input type="text" id="search-bar" placeholder="Search tasks in real time">
+    <hr>
+    
+    <ul id="todo-list-container">
+        </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

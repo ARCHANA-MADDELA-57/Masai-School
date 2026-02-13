@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; 
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 100px repeat(5, 1fr);
+            grid-template-rows: 50px repeat(11, 60px); 
+            gap: 8px; 
+            width: 80%; 
+            max-width: 1000px; 
+            background-color: white; 
+            padding: 10px;
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            padding: 5px;
+            border-radius: 10px; 
+            text-align: center;
+        }
+
+        .header-cell {
+            background-color: #ffc0cb; 
+            font-weight: bold;
+            color: #333;
+        }
+
+        .schedule-grid :nth-child(6n + 1):not(:first-child) {
+            background-color: #b0e0e6; 
+            font-weight: bold;
+            color: #333;
+        }
+
+        .schedule-grid > :nth-child(6n + 2):not(.header-cell), 
+        .schedule-grid > :nth-child(6n + 4):not(.header-cell),
+        .schedule-grid > :nth-child(6n + 6):not(.header-cell) {
+            background-color: #ffe4e1; 
+        }
+        
+        .schedule-grid > :nth-child(6n + 3):not(.header-cell),
+        .schedule-grid > :nth-child(6n + 5):not(.header-cell) {
+            background-color: #fffacd; 
+        }
+
+        .grid-cell:first-child {
+            background-color: #b0e0e6; 
+        }
+
+        .note-section {
+            margin-top: 30px;
+            width: 80%;
+            max-width: 1000px;
+            padding: 10px;
+            font-size: 1em;
+            color: #333;
+            border-top: 2px solid #b0e0e6;
+        }
+
+        .note-section span {
+            font-weight: bold;
+        }
+    </style>
+    </head>
+<body>
+    <h1>Weekly Schedule</h1>
+
+    <div class="schedule-grid">
+        <div class="grid-cell header-cell time-header"></div> <div class="grid-cell header-cell">Monday</div>
+        <div class="grid-cell header-cell">Tuesday</div>
+        <div class="grid-cell header-cell">Wednesday</div>
+        <div class="grid-cell header-cell">Thursday</div>
+        <div class="grid-cell header-cell">Friday</div>
+
+        <div class="grid-cell time-cell">08:00</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">History</div>
+        <div class="grid-cell">Art</div>
+
+        <div class="grid-cell time-cell">09:00</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">PT</div>
+        <div class="grid-cell">IT</div>
+        <div class="grid-cell">Geography</div>
+
+        <div class="grid-cell time-cell">10:00</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">History</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">English</div>
+
+        <div class="grid-cell time-cell">11:00</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+        <div class="grid-cell">**BREAK**</div>
+
+        <div class="grid-cell time-cell">12:00</div>
+        <div class="grid-cell">History</div>
+        <div class="grid-cell">IT</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">Maths</div>
+        <div class="grid-cell">Science</div>
+
+        <div class="grid-cell time-cell">13:00</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        <div class="grid-cell">**LUNCH**</div>
+        
+        <div class="grid-cell time-cell">14:00</div>
+        <div class="grid-cell">Geography</div>
+        <div class="grid-cell">Art</div>
+        <div class="grid-cell">Science</div>
+        <div class="grid-cell">English</div>
+        <div class="grid-cell">PT</div>
+
+        <div class="grid-cell time-cell">15:00</div>
+        <div class="grid-cell">IT</div>
+        <div class="grid-cell">PT</div>
+        <div class="grid-cell">**Exam Prep**</div>
+        <div class="grid-cell">History</div>
+        <div class="grid-cell">Maths</div>
+
+        <div class="grid-cell time-cell">16:00</div>
+        <div class="grid-cell">Library</div>
+        <div class="grid-cell">Moral Science</div>
+        <div class="grid-cell">Study Hall</div>
+        <div class="grid-cell">**Club Time**</div>
+        <div class="grid-cell">Dismissal</div>
+    </div>
+
+    <div class="note-section">
+        <span>Note:</span> Please check the class timings daily for any changes.
+    </div>
+</body>
+</html>

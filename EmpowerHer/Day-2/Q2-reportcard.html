@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report Card</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+        main {
+            padding: 20px 0;
+        }
+        .basic-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .info-details {
+            flex-grow: 1;
+        }
+        h3 {
+            color: #0056b3;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #333; 
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0; 
+            color: #333;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+            text-align: center;
+        }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 50px;
+        }
+        .signature-placeholder {
+            text-align: right;
+        }
+        .print-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Academic Report Card</h1>
+            <p>End of Term Assessment</p>
+        </header>
+
+        <main>
+            <div class="basic-info">
+                <div class="info-details">
+                    <h3>Name: Maddela Archana</h3>
+                    <h3>Gender: Female</h3>
+                    <h3>Class: B.Tech, IV Year</h3>
+                    <h3>Section: A</h3>
+                    <h3>Academic Year: 2022 - 2023</h3>
+                </div>
+                
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" 
+                     alt="Student Profile Picture" 
+                     style="width:100px; height:100px; border-radius: 50%; border: 3px solid #0056b3;">
+            </div>
+
+            <h2>Marks Table</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">Subject Name</th>
+                        <th style="text-align: center;">Marks Obtained</th>
+                        <th style="text-align: center;">Maximum Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Machine Learning</td>
+                        <td style="text-align: center;">88</td>
+                        <td style="text-align: center;">100</td>
+                    </tr>
+                    <tr>
+                        <td>Web Technologies (HTML/CSS)</td>
+                        <td style="text-align: center;">95</td>
+                        <td style="text-align: center;">100</td>
+                    </tr>
+                    <tr>
+                        <td>Python Programming</td>
+                        <td style="text-align: center;">92</td>
+                        <td style="text-align: center;">100</td>
+                    </tr>
+                    <tr>
+                        <td>Software Development Lifecycle (SDLC)</td>
+                        <td style="text-align: center;">85</td>
+                        <td style="text-align: center;">100</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structures and Algorithms</td>
+                        <td style="text-align: center;">79</td>
+                        <td style="text-align: center;">100</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            <strong>Total Marks (in words):</strong> Four Hundred Thirty-Nine Out of Five Hundred
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="height: 60px; text-align: right; vertical-align: bottom;">
+                            Headmaster's Signature: _________________________
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <aside style="margin-top: 20px; padding: 10px; border-left: 5px solid #ffc107; background-color: #fffbe6;">
+                <p><strong>Remarks:</strong> Excellent performance in all core subjects, particularly strong in Web Technologies and Python.</p>
+            </aside>
+        </main>
+        
+        <footer>
+            <button class="print-button" onclick="window.print()">Print Report Card</button>
+        </footer>
+    </div>
+</body>
+</html>

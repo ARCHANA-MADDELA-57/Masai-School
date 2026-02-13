@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <header id="navbar-container"></header>
+    <main style="padding: 50px 20px;">
+        <h1>Welcome to the Modular JavaScript App</h1>
+        <p>This is the home page. Navigate using the bar above.</p>
+        <ul>
+            <li><a href="signup.html">Signup</a> to create a new account.</li>
+            <li><a href="login.html">Login</a> to access the protected Todo list.</li>
+            <li><a href="todos.html">Todos</a> page requires authentication.</li>
+        </ul>
+    </main>
+    <footer id="footer-container"></footer>
+
+    <script type="module">
+        import { createNavbar } from './js/modules/navbar.js';
+        import { createFooter } from './js/modules/footer.js';
+
+        document.body.prepend(createNavbar());
+        document.body.appendChild(createFooter());
+    </script>
+</body>
+</html>

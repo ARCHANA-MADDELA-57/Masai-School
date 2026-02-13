@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators Mastery</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        
+        header {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 1px solid #eee;
+        }
+        
+        aside ul {
+            list-style-position: inside;
+            padding-left: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+       
+        main p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333; 
+            margin-bottom: 10px;
+        }
+
+        
+        nav > ul > li {
+            display: inline;
+            margin-right: 15px;
+            border-bottom: 2px solid #0056b3; 
+            padding-bottom: 3px;
+        }
+        
+    
+        nav > ul > li a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        
+        
+        nav + h2 {
+            color: #d9534f; 
+            font-size: 24px;
+            padding-top: 15px;
+            padding-left: 20px;
+        }
+
+        
+        
+        article h3 ~ p {
+            font-style: italic;
+            color: #888; 
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Welcome to the Content Page</h2> 
+
+    <main>
+        <section>
+            <h2>Primary Content Sections</h2> 
+
+            <article>
+                <h3>Article Title One</h3>
+                <p>This is the main content for the first article. It provides details and contextual information. The style of this paragraph is targeted by the **Descendant Combinator (main p)** and the **General Sibling Combinator (article h3 ~ p)**.</p>
+                <p>A second paragraph within the article to demonstrate the line-height and font-size set by the **main p** selector.</p>
+            </article>
+
+            <article>
+                <h3>Article Title Two</h3>
+                <p>The content here is about Combinator Mastery. Notice how the styling is applied based on its relationship to the h3, even though it's inside the 'main' section.</p>
+                <p>This final paragraph inside the article demonstrates that all paragraphs inside 'main' are selected by 'main p', but only those that are siblings following 'h3' get the italic/soft-tone style.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Recent Posts</h2>
+            <ul>
+                <li>Post 1: CSS Selectors</li>
+                <li>Post 2: Flexbox vs Grid</li>
+                <li>Post 3: HTML Semantics</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2023 Company Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
