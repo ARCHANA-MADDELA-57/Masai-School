@@ -7,7 +7,10 @@ const AuthRoutes = require("./src/routes/auth.route");
 const TaskRoutes = require("./src/routes/tasks.route")
 
 const app = express();
-const PORT = 5858
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 app.use(cors());
 app.use(express.json());
