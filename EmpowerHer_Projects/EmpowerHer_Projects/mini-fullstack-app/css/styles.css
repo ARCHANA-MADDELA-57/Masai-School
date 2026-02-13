@@ -1,0 +1,10 @@
+body{
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    input{padding: 10px;}
+    button{
+        padding: 10px;
+        li{margin: 5px 0;}
+    }
+}
