@@ -14,7 +14,8 @@ Masai School is a military-style coding bootcamp focused on mastery-based learni
 | **Module 1** | HTML5, CSS3, and Responsive Layouts | ✅ Completed |
 | **Module 2** | Core JavaScript, DOM Manipulation, and ES6+ | ✅ Completed |
 | **Module 3** | Advanced React.js Framework & State Management | ✅ Completed |
-| **Module 4** | Backend Development, Node.js, and Supabase | 🏗️ In Progress |
+| **Module 4** | Backend Development, Node.js, Express and Supabase | 🏗️ ✅ Completed |
+| **Module 5** | RPG, Project Allocation, and Placement preparation | 🏗️ In Progress |
 | **Evaluations** | Folder containing all high-stakes module-wise exams | Persistent |
 
 ---
